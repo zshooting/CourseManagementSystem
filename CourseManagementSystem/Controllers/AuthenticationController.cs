@@ -38,7 +38,18 @@ namespace CourseManagementSystem.Controllers
                 }
                 FormsAuthentication.SetAuthCookie(user.phone, false);
                 Session["isTeacher"] = isTeacher;
-                return 
+                if (status == UserStatus.teacher)
+                {
+                    return RedirectToAction("Teacher_MainUI", "teacher");
+                }
+                else if (status == UserStatus.student)
+                {
+                    return RedirectToAction("Student_MainUI", "student");
+                }
+                else
+                {
+                    return View("LoginUI");
+                }
             }
         }
     }
