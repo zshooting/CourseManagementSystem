@@ -15,7 +15,7 @@ namespace CourseManagementSystem.Models
             }
             else
             {
-                return UserStatus.student
+                return UserStatus.student;
             }
         }
     }
